@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, MapPin, Clock, Wrench, Shield, Award, Menu, X, ChevronRight, Star } from 'lucide-react';
 import { Facebook, Twitter } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 const RatosAutos = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,7 +9,7 @@ const RatosAutos = () => {
   const [scrolled, setScrolled] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', details: '' });
-  
+
   // Replace this path with your actual logo path
   const logoPath = '/logo.png'; // Put your logo in the public folder as logo.png
 
@@ -26,9 +27,9 @@ const RatosAutos = () => {
   }, []);
 
   const handleSubmit = (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const message = `
+    const message = `
 Hello Ratos Autos 👋
 
 New Appointment Request:
@@ -39,11 +40,11 @@ Service: ${formData.service}
 Details: ${formData.details}
   `;
 
-  const whatsappNumber = '2348033161077'; // remove leading 0
-  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappNumber = '2348033161077'; // remove leading 0
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
-  window.open(whatsappURL, '_blank');
-};
+    window.open(whatsappURL, '_blank');
+  };
 
 
   const services = {
@@ -71,22 +72,22 @@ Details: ${formData.details}
     }
   };
 
-const clients = [
-  { name: 'Nigerian Bottling Company', logo: '/clients/nigerian-bottling-company.jpg' },
-  { name: 'GSK', logo: '/clients/GSK.jpg' },
-  { name: 'Nigeria Breweries', logo: '/clients/nb.jpeg' },
-  { name: 'PZ Cussons', logo: 'clients/pz.jpg' },
-  { name: 'Haier', logo: 'clients/haier.gif' },
-  { name: 'GTBank', logo: 'clients/gt.jpg' },
-  { name: '7up', logo: 'clients/7up.jpg' },
-  { name: 'MTN', logo: 'clients/mtn.jpg' },
-  { name: 'Coca-Cola', logo: 'clients/cola.jpg' },
-  { name: 'CBN', logo: 'clients/cbn.jpg' },
-  { name: 'GMT', logo: 'clients/gmt.jpg' },
-  { name: 'Chevron', logo: 'clients/chevron.jpg' },
-  { name: 'Cummins', logo: 'clients/cummins.jpg' },
-  { name: 'KPMG', logo: 'clients/kpmg.jpg' }
-];
+  const clients = [
+    { name: 'Nigerian Bottling Company', logo: '/clients/nigerian-bottling-company.jpg' },
+    { name: 'GSK', logo: '/clients/GSK.jpg' },
+    { name: 'Nigeria Breweries', logo: '/clients/nb.jpeg' },
+    { name: 'PZ Cussons', logo: 'clients/pz.jpg' },
+    { name: 'Haier', logo: 'clients/haier.gif' },
+    { name: 'GTBank', logo: 'clients/gt.jpg' },
+    { name: '7up', logo: 'clients/7up.jpg' },
+    { name: 'MTN', logo: 'clients/mtn.jpg' },
+    { name: 'Coca-Cola', logo: 'clients/cola.jpg' },
+    { name: 'CBN', logo: 'clients/cbn.jpg' },
+    { name: 'GMT', logo: 'clients/gmt.jpg' },
+    { name: 'Chevron', logo: 'clients/chevron.jpg' },
+    { name: 'Cummins', logo: 'clients/cummins.jpg' },
+    { name: 'KPMG', logo: 'clients/kpmg.jpg' }
+  ];
 
 
   return (
@@ -133,33 +134,32 @@ const clients = [
       {/* Hero Section with Overlay */}
       <section id="home" className="relative min-h-screen md:h-screen overflow-hidden">
 
-        
-       {/* Background Images */}
-<div className="absolute inset-0 overflow-hidden">
-  {[
-    '/hero/hero1.jpg',
-    '/hero/hero2.jpg',
-    '/hero/hero3.jpeg'
-  ].map((img, i) => (
-    <div
-      key={i}
-      className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-        currentSlide === i ? 'opacity-100' : 'opacity-0'
-      }`}
-    >
-      <img
-        src={img}
-        alt="Ratos Autos workshop"
-        className="w-full h-full object-cover"
-        loading={i === 0 ? 'eager' : 'lazy'}
-      />
-    </div>
-  ))}
-</div>
+
+        {/* Background Images */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[
+            '/hero/hero1.jpg',
+            '/hero/hero2.jpg',
+            '/hero/hero3.jpeg'
+          ].map((img, i) => (
+            <div
+              key={i}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${currentSlide === i ? 'opacity-100' : 'opacity-0'
+                }`}
+            >
+              <img
+                src={img}
+                alt="Ratos Autos workshop"
+                className="w-full h-full object-cover"
+                loading={i === 0 ? 'eager' : 'lazy'}
+              />
+            </div>
+          ))}
+        </div>
 
 
         {/* Dark Overlay */}
-<div className="absolute inset-0 bg-black/13"></div>
+        <div className="absolute inset-0 bg-black/13"></div>
 
 
         {/* Hero Content */}
@@ -170,11 +170,11 @@ const clients = [
                 <Star className="w-4 h-4 text-yellow-300 fill-yellow-300" />
                 <span className="text-white text-sm font-semibold">Highest Rated Repair Shop</span>
               </div>
-              
+
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
                 Professional Auto Care You Can Trust
               </h1>
-              
+
               <p className="text-xl text-gray-200 mb-8 leading-relaxed">
                 Quality service at affordable rates. From quick oil changes to major repairs, we're your trusted auto repair partner in Lagos.
               </p>
@@ -191,26 +191,32 @@ const clients = [
 
               {/* Quick Contact Info */}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10 mb-6">
-  <div className="bg-emerald-600 bg-opacity-20 backdrop-blur-md rounded-lg p-5 border border-emerald-400 border-opacity-10 hover:shadow-sm transition-all">
-    <Clock className="w-6 h-6 text-emerald-200 mb-2" />
-    <p className="text-sm text-emerald-100">Mon - Sat</p>
-    <p className="text-emerald-200 font-semibold">8:00am - 6:00pm</p>
-  </div>
+                <div className="bg-emerald-600 bg-opacity-20 backdrop-blur-md rounded-lg p-5 border border-emerald-400 border-opacity-10 hover:shadow-sm transition-all">
+                  <Clock className="w-6 h-6 text-emerald-200 mb-2" />
+                  <p className="text-sm text-emerald-100">Mon - Sat</p>
+                  <p className="text-emerald-200 font-semibold">8:00am - 6:00pm</p>
+                </div>
 
-  <div className="bg-gray-700 bg-opacity-20 backdrop-blur-md rounded-lg p-5 border border-gray-500 border-opacity-10 hover:shadow-sm transition-all">
-    <Phone className="w-6 h-6 text-emerald-300 mb-2" />
-    <p className="text-sm text-gray-300">Call Us Now</p>
-    <p className="text-gray-200 font-semibold">08033161077</p>
-  </div>
+                <div className="bg-gray-700 bg-opacity-20 backdrop-blur-md rounded-lg p-5 border border-gray-500 border-opacity-10 hover:shadow-sm transition-all">
+                  <Phone className="w-6 h-6 text-emerald-300 mb-2" />
+                  <p className="text-sm text-gray-300">Call Us Now</p>
+                  <p className="text-gray-200 font-semibold">08033161077</p>
+                  
+                </div>
+                                  <div className="bg-gradient-to-br from-emerald-600 to-teal-700 backdrop-blur-md rounded-lg p-5 border border-emerald-400 border-opacity-20 hover:shadow-lg transition-all transform hover:-translate-y-1 duration-300">
+                    <Mail className="w-6 h-6 text-white mb-2" />
+                    <p className="text-sm text-emerald-100">Email Us</p>
+                    <p className="text-white font-semibold">ratosautocare@yahoo.com  | ranl@ratosautos.com</p>
+                  </div>
 
-  <div className="bg-emerald-600 bg-opacity-20 backdrop-blur-md rounded-lg p-5 border border-emerald-400 border-opacity-10 hover:shadow-sm transition-all">
-    <MapPin className="w-6 h-6 text-emerald-200 mb-2" />
-    <p className="text-sm text-emerald-100">Visit Us</p>
-    <p className="text-emerald-200 font-semibold">
-      37, Abosede Kuboye, Off Imam Dauda Street, Eric Moore, Surulere, Lagos
-    </p>
-  </div>
-</div>
+                <div className="bg-emerald-600 bg-opacity-20 backdrop-blur-md rounded-lg p-5 border border-emerald-400 border-opacity-10 hover:shadow-sm transition-all">
+                  <MapPin className="w-6 h-6 text-emerald-200 mb-2" />
+                  <p className="text-sm text-emerald-100">Visit Us</p>
+                  <p className="text-emerald-200 font-semibold">
+                    37, Abosede Kuboye, Off Imam Dauda Street, Eric Moore, Surulere, Lagos
+                  </p>
+                </div>
+              </div>
 
             </div>
           </div>
@@ -241,7 +247,7 @@ const clients = [
               <p className="text-gray-600 mb-8 leading-relaxed">
                 We guarantee you perfect service rendered by our competent auto experts.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-start space-x-3">
                   <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -263,7 +269,7 @@ const clients = [
                 </div>
               </div>
             </div>
-            
+
             <div className="relative">
               <div className="bg-gradient-to-br from-emerald-600 to-teal-700 rounded-2xl p-8 text-white shadow-2xl">
                 <h3 className="text-2xl font-bold mb-4">Why Choose Us?</h3>
@@ -298,11 +304,10 @@ const clients = [
               <button
                 key={key}
                 onClick={() => setActiveService(key)}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all ${
-                  activeService === key
+                className={`px-6 py-3 rounded-lg font-semibold transition-all ${activeService === key
                     ? 'bg-emerald-600 text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+                  }`}
               >
                 {services[key].title}
               </button>
@@ -336,34 +341,34 @@ const clients = [
             <h2 className="text-4xl font-bold mt-2 mb-4">Our Prestigious Clients</h2>
             <p className="text-gray-400">Serving Nigeria's leading corporations with excellence</p>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
             {clients.map((client, i) => (
-<div
-  key={i}
-  className="bg-black bg-opacity-40 backdrop-blur-md rounded-xl p-6
+              <div
+                key={i}
+                className="bg-black bg-opacity-40 backdrop-blur-md rounded-xl p-6
              flex flex-col items-center justify-center
              border border-emerald-500 border-opacity-30
              hover:bg-opacity-60 transition-all"
->
-  {/* Logo placeholder */}
-  <div className="w-20 h-20 mb-4 rounded-lg bg-gray-800 flex items-center justify-center">
-    {client.logo ? (
-      <img
-        src={client.logo}
-        alt={client.name}
-        className="max-w-full max-h-full object-contain"
-      />
-    ) : (
-      <span className="text-xs text-gray-400">LOGO</span>
-    )}
-  </div>
+              >
+                {/* Logo placeholder */}
+                <div className="w-20 h-20 mb-4 rounded-lg bg-gray-800 flex items-center justify-center">
+                  {client.logo ? (
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  ) : (
+                    <span className="text-xs text-gray-400">LOGO</span>
+                  )}
+                </div>
 
-  {/* Client name */}
-  <p className="text-center text-sm font-semibold text-white">
-    {client.name}
-  </p>
-</div>
+                {/* Client name */}
+                <p className="text-center text-sm font-semibold text-white">
+                  {client.name}
+                </p>
+              </div>
 
 
 
@@ -379,7 +384,7 @@ const clients = [
             <div>
               <h2 className="text-4xl font-bold mb-6">Get In Touch</h2>
               <p className="text-emerald-100 mb-8">Visit us or give us a call. We're here to help with all your automotive needs.</p>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -390,7 +395,7 @@ const clients = [
                     <p className="text-emerald-100">37, Abosede Kuboye, Off Imam Dauda Street<br />Eric Moore, Surulere, Lagos</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Phone className="w-6 h-6" />
@@ -399,8 +404,15 @@ const clients = [
                     <h3 className="font-semibold mb-1">Phone Numbers</h3>
                     <p className="text-emerald-100">08033161077 | 08052021485<br />08026684230 | 08099701803</p>
                   </div>
+                  <div className="bg-gradient-to-br from-emerald-600 to-teal-700 backdrop-blur-md rounded-lg p-5 border border-emerald-400 border-opacity-20 hover:shadow-lg transition-all transform hover:-translate-y-1 duration-300">
+                    <Mail className="w-6 h-6 text-white mb-2" />
+                    <p className="text-sm text-emerald-100">Email Us</p>
+                    <p className="text-white font-semibold">ratosautocare@yahoo.com</p>
+                  </div>
+
+
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Clock className="w-6 h-6" />
@@ -416,30 +428,30 @@ const clients = [
             <div className="bg-white rounded-2xl p-8 text-gray-900">
               <h3 className="text-2xl font-bold mb-6">Schedule an Appointment</h3>
               <div className="space-y-4">
-                <input 
-                  type="text" 
-                  placeholder="Your Name" 
+                <input
+                  type="text"
+                  placeholder="Your Name"
                   value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-600" 
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-600"
                 />
-                <input 
-                  type="email" 
-                  placeholder="Email Address" 
+                <input
+                  type="email"
+                  placeholder="Email Address"
                   value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-600" 
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-600"
                 />
-                <input 
-                  type="tel" 
-                  placeholder="Phone Number" 
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
                   value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-600" 
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-600"
                 />
-                <select 
+                <select
                   value={formData.service}
-                  onChange={(e) => setFormData({...formData, service: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-600"
                 >
                   <option value="">Select Service</option>
@@ -448,14 +460,14 @@ const clients = [
                   <option value="diagnostic">Engine Diagnostic</option>
                   <option value="other">Other</option>
                 </select>
-                <textarea 
-                  placeholder="Additional Details" 
-                  rows="4" 
+                <textarea
+                  placeholder="Additional Details"
+                  rows="4"
                   value={formData.details}
-                  onChange={(e) => setFormData({...formData, details: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, details: e.target.value })}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-600"
                 ></textarea>
-                <button 
+                <button
                   onClick={handleSubmit}
                   className="w-full bg-emerald-600 text-white py-4 rounded-lg font-semibold hover:bg-emerald-700 transition-all shadow-lg"
                 >
@@ -468,29 +480,42 @@ const clients = [
       </section>
 
       {/* Footer */}
-<footer className="bg-gray-900 text-gray-400 py-12">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center">
-      <div className="flex items-center justify-center space-x-3 mb-4">
-        <img src={logoPath} alt="Ratos Autos Logo" className="h-10 w-auto" />
-        <span className="text-2xl font-bold text-white">Ratos Autos</span>
-      </div>
-      <p className="mb-4">Professional Auto Care Since 2018</p>
+      <footer className="bg-gray-900 text-gray-400 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="flex items-center justify-center space-x-3 mb-4">
+              <img src={logoPath} alt="Ratos Autos Logo" className="h-10 w-auto" />
+              <span className="text-2xl font-bold text-white">Ratos Autos</span>
+            </div>
+            <p className="mb-4">Professional Auto Care Since 2018</p>
 
-      {/* Social Buttons */}
-      <div className="flex justify-center space-x-4 mb-4">
-        <a href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fratosautos.com%2F&linkname=Ratos%20Autos%20%E2%80%93%20Ratos%20Autos&linknote=" target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 p-3 rounded-full transition-colors">
-          <Facebook className="w-5 h-5 text-white" />
-        </a>
-        <a href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fratosautos.com%2F&linkname=Ratos%20Autos%20%E2%80%93%20Ratos%20Autos&linknote=" target="_blank" rel="noopener noreferrer" className="bg-blue-400 hover:bg-blue-500 p-3 rounded-full transition-colors">
-          <Twitter className="w-5 h-5 text-white" />
-        </a>
-      </div>
+            {/* Social Buttons */}
+            <div className="flex justify-center space-x-4 mb-4">
+              <a href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fratosautos.com%2F&linkname=Ratos%20Autos%20%E2%80%93%20Ratos%20Autos&linknote=" target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 p-3 rounded-full transition-colors">
+                <Facebook className="w-5 h-5 text-white" />
+              </a>
+              <a href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fratosautos.com%2F&linkname=Ratos%20Autos%20%E2%80%93%20Ratos%20Autos&linknote=" target="_blank" rel="noopener noreferrer" className="bg-blue-400 hover:bg-blue-500 p-3 rounded-full transition-colors">
+                <Twitter className="w-5 h-5 text-white" />
+              </a>
+            </div>
 
-      <p className="text-sm">© 2024 Ratos Autos. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+            <p className="text-sm">© 2024 Ratos Autos. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+      {/* Floating WhatsApp Button */}
+<a
+  href="https://wa.me/2348033161077"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed bottom-6 right-6 flex items-center bg-emerald-600 hover:bg-emerald-700 text-white rounded-full shadow-lg px-4 py-3 z-50 transition-all"
+>
+  <img src="/whatsapp-icon.png" alt="WhatsApp" className="w-6 h-6" />
+  <span className="ml-2 font-semibold">Get in Touch</span>
+</a>
+
+
+
     </div>
   );
 };
