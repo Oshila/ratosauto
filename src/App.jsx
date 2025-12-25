@@ -135,8 +135,8 @@ const clients = [
        {/* Background Images */}
 <div className="absolute inset-0 overflow-hidden">
   {[
-    '/hero/hero1.jpeg',
-    '/hero/hero2.jpeg',
+    '/hero/hero1.jpg',
+    '/hero/hero2.jpg',
     '/hero/hero3.jpeg'
   ].map((img, i) => (
     <div
