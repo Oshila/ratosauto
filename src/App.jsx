@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, MapPin, Clock, Wrench, Shield, Award, Menu, X, ChevronRight, Star } from 'lucide-react';
+import { Facebook, Twitter } from 'lucide-react';
 
 const RatosAutos = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -73,6 +74,7 @@ Details: ${formData.details}
 const clients = [
   { name: 'Nigerian Bottling Company', logo: '/clients/nigerian-bottling-company.jpg' },
   { name: 'GSK', logo: '/clients/GSK.jpg' },
+  { name: 'Nigeria Breweries', logo: '/clients/nb.jpeg' },
   { name: 'PZ Cussons', logo: 'clients/pz.jpg' },
   { name: 'Haier', logo: 'clients/haier.gif' },
   { name: 'GTBank', logo: 'clients/gt.jpg' },
@@ -157,7 +159,7 @@ const clients = [
 
 
         {/* Dark Overlay */}
-<div className="absolute inset-0 bg-black/65"></div>
+<div className="absolute inset-0 bg-black/13"></div>
 
 
         {/* Hero Content */}
@@ -189,23 +191,27 @@ const clients = [
 
               {/* Quick Contact Info */}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10 mb-6">
+  <div className="bg-emerald-600 bg-opacity-20 backdrop-blur-md rounded-lg p-5 border border-emerald-400 border-opacity-10 hover:shadow-sm transition-all">
+    <Clock className="w-6 h-6 text-emerald-200 mb-2" />
+    <p className="text-sm text-emerald-100">Mon - Sat</p>
+    <p className="text-emerald-200 font-semibold">8:00am - 6:00pm</p>
+  </div>
 
-                <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 backdrop-blur-md rounded-lg p-5 border border-emerald-400 border-opacity-20 hover:shadow-lg transition-all transform hover:-translate-y-1 duration-300">
-                  <Clock className="w-6 h-6 text-white mb-2" />
-                  <p className="text-sm text-emerald-100">Mon - Sat</p>
-                  <p className="text-white font-semibold">8:00am - 6:00pm</p>
-                </div>
-                <div className="bg-gradient-to-br from-gray-700 to-gray-800 backdrop-blur-md rounded-lg p-5 border border-gray-500 border-opacity-30 hover:shadow-lg transition-all transform hover:-translate-y-1 duration-300">
-                  <Phone className="w-6 h-6 text-emerald-400 mb-2" />
-                  <p className="text-sm text-gray-300">Call Us Now</p>
-                  <p className="text-white font-semibold">08033161077</p>
-                </div>
-                <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 backdrop-blur-md rounded-lg p-5 border border-emerald-400 border-opacity-20 hover:shadow-lg transition-all transform hover:-translate-y-1 duration-300">
-                  <MapPin className="w-6 h-6 text-white mb-2" />
-                  <p className="text-sm text-emerald-100">Visit Us</p>
-                  <p className="text-white font-semibold"> 37, Abosede Kuboye, Off Imam Dauda Street, Eric Moore, Surulere, Lagos</p>
-                </div>
-              </div>
+  <div className="bg-gray-700 bg-opacity-20 backdrop-blur-md rounded-lg p-5 border border-gray-500 border-opacity-10 hover:shadow-sm transition-all">
+    <Phone className="w-6 h-6 text-emerald-300 mb-2" />
+    <p className="text-sm text-gray-300">Call Us Now</p>
+    <p className="text-gray-200 font-semibold">08033161077</p>
+  </div>
+
+  <div className="bg-emerald-600 bg-opacity-20 backdrop-blur-md rounded-lg p-5 border border-emerald-400 border-opacity-10 hover:shadow-sm transition-all">
+    <MapPin className="w-6 h-6 text-emerald-200 mb-2" />
+    <p className="text-sm text-emerald-100">Visit Us</p>
+    <p className="text-emerald-200 font-semibold">
+      37, Abosede Kuboye, Off Imam Dauda Street, Eric Moore, Surulere, Lagos
+    </p>
+  </div>
+</div>
+
             </div>
           </div>
         </div>
@@ -462,18 +468,29 @@ const clients = [
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="flex items-center justify-center space-x-3 mb-4">
-              <img src={logoPath} alt="Ratos Autos Logo" className="h-10 w-auto" />
-              <span className="text-2xl font-bold text-white">Ratos Autos</span>
-            </div>
-            <p className="mb-4">Professional Auto Care Since 2018</p>
-            <p className="text-sm">© 2024 Ratos Autos. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+<footer className="bg-gray-900 text-gray-400 py-12">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center">
+      <div className="flex items-center justify-center space-x-3 mb-4">
+        <img src={logoPath} alt="Ratos Autos Logo" className="h-10 w-auto" />
+        <span className="text-2xl font-bold text-white">Ratos Autos</span>
+      </div>
+      <p className="mb-4">Professional Auto Care Since 2018</p>
+
+      {/* Social Buttons */}
+      <div className="flex justify-center space-x-4 mb-4">
+        <a href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fratosautos.com%2F&linkname=Ratos%20Autos%20%E2%80%93%20Ratos%20Autos&linknote=" target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 p-3 rounded-full transition-colors">
+          <Facebook className="w-5 h-5 text-white" />
+        </a>
+        <a href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fratosautos.com%2F&linkname=Ratos%20Autos%20%E2%80%93%20Ratos%20Autos&linknote=" target="_blank" rel="noopener noreferrer" className="bg-blue-400 hover:bg-blue-500 p-3 rounded-full transition-colors">
+          <Twitter className="w-5 h-5 text-white" />
+        </a>
+      </div>
+
+      <p className="text-sm">© 2024 Ratos Autos. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
     </div>
   );
 };
